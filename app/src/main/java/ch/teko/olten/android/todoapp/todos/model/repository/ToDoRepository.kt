@@ -1,9 +1,7 @@
 package ch.teko.olten.android.todoapp.todos.model.repository
 
-import ch.teko.olten.android.todoapp.login.model.repository.UserRepository
-import ch.teko.olten.android.todoapp.login.model.repository.inmemory.InMemoryUserRepository
 import ch.teko.olten.android.todoapp.todos.model.ToDo
-import ch.teko.olten.android.todoapp.todos.model.repository.inmemory.InMemoryToDoRepository
+
 
 interface ToDoRepository {
 
@@ -15,11 +13,11 @@ interface ToDoRepository {
 
     companion object {
 
-        private val repository = InMemoryToDoRepository()
+        //private val repository = InMemoryToDoRepository()
 
-        fun getRepository() : ToDoRepository {
-            return repository
-        }
+        //fun getRepository() : ToDoRepository {
+        //    return repository
+        //}
 
     }
 
