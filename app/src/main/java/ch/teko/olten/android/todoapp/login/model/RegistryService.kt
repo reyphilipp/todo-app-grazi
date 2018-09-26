@@ -5,7 +5,16 @@ import ch.teko.olten.android.todoapp.login.view.RegisterView
 
 class RegistryService(private val view: RegisterView) {
 
+    val repository = UserRepository.getRepository()
+
     fun registerUser(username: String, password: String) {
+        val user = repository.createUser(username, password)
+
+        if (user != null) {
+            view.userIsRegistrated(username)
+        } else {
+            view.userIsNotRegistrated(username)
+        }
 
     }
 }

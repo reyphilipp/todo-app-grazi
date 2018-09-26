@@ -12,18 +12,31 @@ import kotlinx.android.synthetic.main.activity_register.*
 
 class RegisterActivity : AppCompatActivity(), RegisterView {
 
+    val registryService = RegistryService(this)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
+        registerBtn.setOnClickListener {
+            val username = usernameTxt.text.toString()
+            val password = passwordTxt.text.toString()
+
+            registryService.registerUser(username, password)
+
+        }
     }
 
     override fun userIsRegistrated(username: String) {
-
+        Toast.makeText(this, "User $username is now registrated!", Toast.LENGTH_SHORT).show()
+        setResult(Activity.RESULT_OK)
+        finish()
     }
 
     override fun userIsNotRegistrated(username: String) {
-
+        usernameTxt.text = null
+        passwordTxt.text = null
+        Toast.makeText(this, "Sorry, User $username alredy exists!", Toast.LENGTH_SHORT).show()
     }
 
 }
