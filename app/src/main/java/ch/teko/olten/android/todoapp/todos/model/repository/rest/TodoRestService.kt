@@ -9,7 +9,7 @@ import retrofit2.http.GET
 
 interface TodoRestService {
 
-    @GET("/todos")
+    @GET("toDos")
     fun getAllTodos() : Observable<List<ToDo>>
 
 
@@ -19,7 +19,7 @@ interface TodoRestService {
             val retrofit = Retrofit.Builder()
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create())
-                    .baseUrl("http://192.168.1.109:8090/todo-api/")
+                    .baseUrl("http://192.168.30.100:8090/todo-api/")
                     //.baseUrl("http://10.0.2.2:8090/todo-api/")
                     .build()
 
