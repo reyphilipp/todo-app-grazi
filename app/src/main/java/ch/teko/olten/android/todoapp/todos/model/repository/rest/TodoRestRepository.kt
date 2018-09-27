@@ -1,5 +1,6 @@
 package ch.teko.olten.android.todoapp.todos.model.repository.rest
 
+import android.util.Log
 import ch.teko.olten.android.todoapp.todos.model.ToDo
 import ch.teko.olten.android.todoapp.todos.model.repository.ToDoRepository
 import io.reactivex.android.schedulers.AndroidSchedulers
